@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { ContextGlobal } from "./utils/global.context";
 import { removeTokenFromStorage } from "./utils/localStorage.service";
 import styles from "./Navbar.module.css";
+import { AuthContext } from "./utils/AuthContext";
 
 const Navbar = () => {
-  const { theme, setDarkTheme, setLightTheme, login, setLogout } =
+  const { theme, setDarkTheme, setLightTheme, setLogout } =
     useContext(ContextGlobal);
+
+  const {login, setLogin, emptyUserData} = useContext(AuthContext)
   const isDarkMode = theme === "dark" || false;
 
   const changeTheme = () => {
@@ -16,6 +19,8 @@ const Navbar = () => {
 
   const logout = () => {
     setLogout();
+    setLogin(false);
+    emptyUserData();
     removeTokenFromStorage();
   };
 

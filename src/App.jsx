@@ -3,6 +3,7 @@ import { useEffect, useContext } from 'react';
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
+import AuthProvider from './Components/utils/AuthContext';
 import { ContextGlobal } from './Components/utils/global.context';
 
 
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <>
+    <AuthProvider>
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar a classe dark ou light */}
       <div className={`app ${isDarkMode ? "dark" : "light"}`}>
@@ -29,6 +31,7 @@ function App() {
         </main>
         <Footer />
       </div>
+    </AuthProvider>
     </>
   );
 }
