@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "../Components/Card";
 
+
 const Home = () => {
   const [dentist, setDentist] = useState([]);
 
@@ -22,7 +23,7 @@ const Home = () => {
       <h1>Home</h1>
       <div className="card-grid container">
         {dentist.length ? dentist.map((dentist) => (
-            <Card {...dentist} key={dentist.matricula} />
+            <Card dentist={dentist} key={dentist.matricula} />
           ))
         : null}
       </div>

@@ -1,11 +1,12 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { ContextGlobal } from "./utils/global.context";
 import styles from "./Card.module.css";
+import { useContext } from "react";
+import { NavBarContext } from "../utils/NavBarContext";
+// import { Link } from "react-router-dom";
+// import { ContextGlobal } from "./utils/global.context";
 
-const Card = ({ nome, matricula, usuario }) => {
-  const { theme } = useContext(ContextGlobal);
-  const isDarkMode = theme === "dark" || false;
+
+const Card = ({ nome, matricula, usuario }) => { 
+    const { contextIsLight } = useContext(NavBarContext);
 
   return (
     <div className={`card ${isDarkMode ? styles.cardDark : ""}`}>
