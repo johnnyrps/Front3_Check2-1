@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { ContextGlobal } from "./utils/global.context";
 import styles from "./Card.module.css";
 import { useContext } from "react";
 import { NavBarContext } from "../utils/NavBarContext";
