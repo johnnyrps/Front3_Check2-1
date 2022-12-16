@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Card from "../Components/Card";
 import axios from "axios";
 
+
 const Home = () => {
   const [dentist, setDentist] = useState([]);
 
